@@ -1,5 +1,5 @@
 const { sequelize } = require("../connection");
-const { UserModel } = require('../model/user.model');
+const { UserModel } = require('../model/users.model');
 
 const listar = async function (textoBuscar) {
     console.log('listar usuarios');

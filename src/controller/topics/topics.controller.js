@@ -1,12 +1,12 @@
 const { sequelize } = require ("../../connection");
-const { TopicsModel } = require ("../../model/topics.model");
-const TopicService = require("../../service/topics.service");
+const { TopicModel } = require ("../../model/topics.model");
+const TopicsService = require("../../service/topics.service");
 
 const listar = async function (req, res) {
     console.log("listar topics");
 
     try {
-        const topics = await TopicService.listar(req.query.filtro || "");
+        const topics = await TopicsService.listar(req.query.filtro || "");
 
         if(topics) {
             res.json({
@@ -31,7 +31,7 @@ const listar = async function (req, res) {
 const consultarPorCodigo = async function (req, res) {
     console.log("consultar un topic por codigo");
     try {
-        const topicsModelResult = await TopicService.busquedaPorCodigo(req.params.filtro || "");
+        const topicsModelResult = await TopicsService.busquedaPorCodigo(req.params.filtro || "");
 
         if (topicsModelResult) {
             res.json({
@@ -61,7 +61,7 @@ const actualizar = async function (req, res) {
     //const id = req.body.id;
 
     try {
-        topicRetorno = await TopicService.actualizar(
+        topicRetorno = await TopicsService.actualizar(
             req.body.id,
             req.body.create_date,
             req.body.name,
@@ -90,7 +90,7 @@ const eliminar = async function (req, res) {
     console.log("eliminar topic");
 
     try {
-        await TopicService.eliminar(req.params.filtro || "");
+        await TopicsService.eliminar(req.params.filtro || "");
         res.json({
             success: true
         })

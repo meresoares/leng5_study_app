@@ -5,7 +5,7 @@ const UserModel = sequelize.define('User', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primarykey: true,
+        primaryKey: true,
         autoIncrement: true
     },
 
@@ -37,7 +37,7 @@ const UserModel = sequelize.define('User', {
     deleted: {
         type: DataTypes.BOOLEAN, 
         allowNull: false
-    }
+    } 
 
 }, {
     //Nombre de la tabla de bd
@@ -46,5 +46,5 @@ const UserModel = sequelize.define('User', {
 });
 
 module.exports = {
-    UserModel
+    UserModel
 }

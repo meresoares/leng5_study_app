@@ -5,7 +5,7 @@ const ThemeModel = sequelize.define('Theme', {
     id: {
         type: DataTypes.INTEGER, 
         allowNull: false, 
-        primarykey: true, 
+        primaryKey: true, 
         autoIncrement: true,
     },
     create_date: {
@@ -28,15 +28,11 @@ const ThemeModel = sequelize.define('Theme', {
         type: DataTypes.INTEGER, 
         allowNull: true
     },
-   
-   /* deleted: {
-        type: DataTypes.BOOLEAN, allowNull: false,
-    } */
 
 }, {
     tableName: 'themes',
     timestamps: false
 });
 module.exports = {
-    ThemeModel
+    ThemeModel
 }

@@ -1,11 +1,11 @@
-const { DataTypes } = require('sequelize')
+const { DataTypes } = require('sequelize');
 const { sequelize } = require("../connection");
 
 const TopicModel = sequelize.define('Topic', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primarykey: true,
+        primaryKey: true,
         autoIncrement: true
     },
 
@@ -31,7 +31,7 @@ const TopicModel = sequelize.define('Topic', {
 
     priority: {
         type: DataTypes.INTEGER,
-        aallowNull: true
+        allowNull: true
     },
     
     color: {

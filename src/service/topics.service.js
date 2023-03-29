@@ -1,5 +1,5 @@
 const { sequelize} = require("../connection");
-const { TopicsModel } = require('../../model/topics.model');
+const { TopicModel } = require('../model/topics.model');
 
 const listar =async function (textoBuscar) {
     console.log('listar topics');
@@ -25,7 +25,7 @@ const consultarPorCodigo = async function (codigo) {
     console.log("consultar topic por codigo");
 
     try {
-        const topicModelResult = await TopicsModel.findByPk(codigo);
+        const topicModelResult = await TopicModel.findByPk(codigo);
 
         if (topicModelResult) {
             return topicModelResult;
@@ -47,15 +47,15 @@ const actualizar = async function (id, create_date, name, topic_id, order, prior
         let topicExiste = null;
 
         if (id) {
-            topicExiste = await TopicsModel.findByPk(id);
+            topicExiste = await TopicModel.findByPk(id);
         } 
         
         if (topicExiste) {
-            topicRetorno = await TopicsModel.update(data, {where: {id: id} } );
+            topicRetorno = await TopicModel.update(data, {where: {id: id} } );
             topicRetorno = data;
         }
         else {
-            topicRetorno = await TopicsModel.create(data);
+            topicRetorno = await TopicModel.create(data);
         }
 
         return topicRetorno;
@@ -71,7 +71,7 @@ const eliminar = async function (id) {
     console.log("eliminar topic");
 
     try {
-        TopicsModel.destroy( { where: { id: codigo, topic_id: codigo }}, { truncate: false });
+        TopicModel.destroy( { where: { id: codigo, topic_id: codigo }}, { truncate: false });
     } catch (error) {
         console.log(error);
         throw error;
