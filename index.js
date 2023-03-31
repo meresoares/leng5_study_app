@@ -11,6 +11,7 @@ app.use(bodyParser());
 const userRoute = require("./src/route/users/user.route");
 const themesRoute = require('./src/route/themes/theme.route');
 const topicsRoute = require("./src/route/topics/topic.route");
+const themesPropertiesRoute = require("./src/route/themes_properties/theme.properties.route");
  
 //Ruta raiz o endpoint con el metodo GET
 // Request -> solicitud -> parametros -> argumentos
@@ -31,6 +32,7 @@ app.get('/pagina2', function (req, res) {
 userRoute(app);
 themesRoute(app);
 topicsRoute(app);
+themesPropertiesRoute(app);
 
 
 // Escuchar la peticion en el puerto 3000
