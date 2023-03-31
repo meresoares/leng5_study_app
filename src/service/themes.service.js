@@ -1,6 +1,6 @@
 const { sequelize } = require("../connection");
 const { ThemeModel } = require('../model/themes.model');
-
+// Atender las rutas
 
 const listar = async function (textoBuscar) {
     console.log("listar temas");
