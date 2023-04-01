@@ -8,7 +8,7 @@ const listar = async function (textoBuscar) {
         const themesProperties = await sequelize.query (
             `SELECT * FROM themes_properties
             WHERE 1=1
-            AND UPPER(name) LIKE UPPER ('%${textoBuscar}%')
+            AND UPPER(property_name) LIKE UPPER ('%${textoBuscar}%')
             ORDER BY id`);
         if (themesProperties  && themesProperties [0]) {
             return themesProperties [0];
